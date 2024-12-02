@@ -143,3 +143,42 @@ fn tuple_type() {
     println!("{}", status);
     println!("{}", age)
 }
+#[test]
+fn arrays_type() {
+    let names = ["khairul", "aswad", "budi", "eko"];
+
+    println!("{}", names[0]);
+}
+
+#[test]
+fn augmented_assignment() {
+    let mut a: i32 = 10;
+
+    println!("{}", a);
+
+    a += 10;
+    println!("{}", a);
+
+    a *= 5;
+    println!("{}", a);
+}
+
+#[test]
+fn comparison_operators() {
+    let result: bool = 10 > 20;
+
+    assert_eq!(result, false, "result {}", result)
+}
+
+#[test]
+fn boolean_operator() {
+    let absen: i8 = 75;
+    let nilai_akhir: i8 = 90;
+
+    let lulus: bool = absen >= 75;
+    let lulus_nilai_akhir: bool = nilai_akhir >= 80;
+
+    let lulus_final: bool = lulus && lulus_nilai_akhir;
+
+    println!("lulus nilai akhir true=lulus, false=tidak : {}", lulus_final)
+}
