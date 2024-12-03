@@ -100,7 +100,46 @@ fn numerical_operator() {
     let c = a * b;
     let e = a % b;
     let d  = c / b;
+
+    let remainder = 2 % 4;
+    println!("Hasil dari modulus tersebut ialah: {remainder}"); 
     println!("{}", c);
     println!("{}", e);
     println!("{}", d);
+}
+#[test]
+fn boolean_type() {
+
+    let t = true;
+
+    let f: bool = false;
+
+    println!("{t}");
+    println!("{f}");
+}
+
+#[test]
+fn char_type() {
+
+    let t = 's';
+
+    let f: char = 'B';
+
+    println!("this is char of : {t}");
+    println!("this is char of : {f}");
+}
+
+#[test]
+fn tuple_type() {
+    let tup: (&str, bool, i32) = ("aswad", false, 20);
+
+    //destructuring type of tuple
+    let (name, status, age) = tup;
+
+    println!("name: {}", tup.0);
+    println!("status: {}", tup.1);
+    println!("age: {}", tup.2);
+    println!("{name}");
+    println!("{}", status);
+    println!("{}", age)
 }
