@@ -17,3 +17,11 @@ rust distributed system to upload your application using
 ```
 cargo build --release
 ```
+run all file tests
+```
+cargo test
+```
+run single test
+```
+cargo test name_test -- --exact
+```
