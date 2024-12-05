@@ -7,6 +7,24 @@ fn main() {
     
     println!("Hello nama saya khairul aswad");
 
+    let a = [1, 2, 3, 4, 5];
+
+    println!("Please enter an array index.");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+    println!("The value of the element at index {index} is: {element}");
+
 }
 
 #[test]
@@ -210,22 +228,17 @@ fn arrays_but_adding_value() {
 }
 
 #[test]
-fn array_invalid_element_access() {
-    let a = [1, 2, 3, 4, 5];
+fn function_represenst() {
+    println!("Hello, world!");
 
-    println!("Please enter an array index.");
+    say_hello_to_number(30);
+    print_labeled_measurement(40,'H');
+}
 
-    let mut index = String::new();
+fn say_hello_to_number(x: i32) {
+    println!("Hello number: {}", x)
+}
 
-    io::stdin()
-        .read_line(&mut index)
-        .expect("Failed to read line");
-
-    let index: usize = index
-        .trim()
-        .parse()
-        .expect("Index entered was not a number");
-
-    let element = a[index];
-    println!("The value of the element at index {index} is: {element}");
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("the number of: {} labeled by: {}", value, unit_label)
 }
