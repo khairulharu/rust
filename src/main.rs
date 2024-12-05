@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     println!("Hello, world!");
 
@@ -192,4 +194,38 @@ fn loop_iterator() {
     }
 
     println!("status nikah {}", status_nikah)
+}
+
+#[test]
+fn arrays_but_adding_value() {
+    let mut a = [1, 2, 3, 4];
+
+    a[0] = 10;
+
+    let b: [i32; 2] = [1, 2];
+
+    println!("this is b first example {}", b[1]);
+
+    println!("{}", a[0]);
+}
+
+#[test]
+fn array_invalid_element_access() {
+    let a = [1, 2, 3, 4, 5];
+
+    println!("Please enter an array index.");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+    println!("The value of the element at index {index} is: {element}");
 }
