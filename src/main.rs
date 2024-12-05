@@ -182,3 +182,14 @@ fn boolean_operator() {
 
     println!("lulus nilai akhir true=lulus, false=tidak : {}", lulus_final)
 }
+
+#[test]
+fn loop_iterator() {
+    let mut status_nikah: bool = true;
+
+    if status_nikah != false {
+        status_nikah = false;
+    }
+
+    println!("status nikah {}", status_nikah)
+}
