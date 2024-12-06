@@ -377,3 +377,46 @@ fn loop_labels_to_disambigu() {
 
     println!("End count = {count}");
 }
+
+#[test]
+fn while_loop_in_rust() {
+    let mut number = 5;
+
+    while number != 0 {
+        println!("{number}!");
+
+        number -= 1;
+    }
+
+    println!("LIFTOFF!!!");
+}
+
+#[test]
+fn loop_arrays_using_while() {
+    let a = [10, 20, 30, 40, 50];
+
+    let mut index = 0;
+
+    while index < a.len() {
+        println!("The value of a is:{}", a[index]);
+
+        index += 1;
+    }
+
+    println!("Thats All")
+}
+
+#[test]
+fn loop_arrays_using_for() {
+    let arrays: [i8; 5] = [10, 20, 30, 40, 50];
+
+    for element in arrays {
+        println!("this is value of arrays: {element}");
+    }
+
+    for number in (1..4).rev() {
+        println!("{number}");
+    }
+
+    println!("LiftOff");
+}
