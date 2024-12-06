@@ -28,7 +28,6 @@ fn main() {
 
     let element = a[index];
     println!("The value of the element at index {index} is: {element}");
-
 }
 
 #[test]
@@ -313,5 +312,25 @@ fn ganjil_genap_cek() {
         println!("Angka {value} adalah genap");
     } else {
         println!("Angka {value} adalah ganjil");
+    }
+}
+
+#[test]
+fn using_if_on_let() {
+    let condition = false;
+
+    let number = if condition {6} else {7};
+
+    // incompatible, value must be one if type
+    // let number = if condition {6} else {"seven"};
+
+    println!("the value of number is:{number}");
+}
+
+#[test]
+fn repetitio_using_loops() {
+
+    loop {
+        println!("Again!");
     }
 }
