@@ -7,6 +7,10 @@ fn main() {
     
     println!("Hello nama saya khairul aswad");
 
+    say_hello_to_number(30);
+
+    print_labeled_measurement(40, 'N');
+
     let a = [1, 2, 3, 4, 5];
 
     println!("Please enter an array index.");
