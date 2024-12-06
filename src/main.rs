@@ -246,3 +246,72 @@ fn say_hello_to_number(x: i32) {
 fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("the number of: {} labeled by: {}", value, unit_label)
 }
+
+#[test]
+fn function_statement_and_expressions() {
+    //this is statemnt
+    let t = 7;
+
+
+    //Calling a macro is expression
+    println!("{t}");
+
+    //and this is an expression
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("this is expression of new line: {}", y);
+}
+#[test]
+fn function_return_value() {
+    let value = five();
+
+    println!("data of variable value is: {value}");
+
+    let x = plus_one(5);
+
+    println!("the value of x variable is: {x}");
+}
+
+fn five() -> i32 {
+    5
+}
+
+fn plus_one(x: i32) -> i32 {
+    x + 1
+}
+
+#[test]
+fn control_flow() {
+    let nilai_ujian = 90;
+    let batas_nilai_ujian = 75;
+
+    if nilai_ujian >= batas_nilai_ujian {
+        println!("Kamu lulus!");
+    } else {
+        println!("Kamu gagal");
+    }
+
+    if nilai_ujian >= 90 {
+        println!("Kamu masuk grade A");
+    } else if nilai_ujian <= 90 && nilai_ujian >= 80 {
+        println!("Kamu masuk grade B");
+    } else {
+        println!("Kamu grade C")
+    }
+
+}
+
+#[test]
+fn ganjil_genap_cek() {
+
+    let value = 40;
+
+    if value % 2 == 0 {
+        println!("Angka {value} adalah genap");
+    } else {
+        println!("Angka {value} adalah ganjil");
+    }
+}
