@@ -329,8 +329,23 @@ fn using_if_on_let() {
 
 #[test]
 fn repetitio_using_loops() {
+    //this code will print Again until we stop the program
+    //this not will print on test mode but in main function its actually running
 
-    loop {
-        println!("Again!");
-    }
+    // loop {
+    //     println!("Again!");
+    // }
+
+    let mut counter = 0;
+
+    let result = loop {
+        counter += 1;
+
+        if counter == 5 {
+            break counter;
+        }
+
+    };
+
+    println!("value of counter is {result}")
 }
