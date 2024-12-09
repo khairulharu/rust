@@ -417,6 +417,18 @@ fn loop_arrays_using_for() {
     for number in (1..4).rev() {
         println!("{number}");
     }
-
     println!("LiftOff");
+}
+#[test]
+fn another_looping_expreience() {
+    let mut nano_prison = String::new();
+
+    io::stdin()
+        .read_line( &mut nano_prison)
+        .expect("cannot read line");
+
+    //using shadowing variable this method only use when you need convert type of variabel
+    let nano_prison: String = nano_prison.trim().parse().expect("Only string");
+
+    println!(" this is taking gesture: {nano_prison}")
 }
