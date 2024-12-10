@@ -432,3 +432,10 @@ fn another_looping_expreience() {
 
     println!(" this is taking gesture: {nano_prison}")
 }
+
+#[test]
+fn looping_using_for() {
+    for number in 1..100 {
+        println!("{number}");
+    }
+}
