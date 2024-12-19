@@ -4,7 +4,7 @@ fn main() {
     println!("Hello, world!");
 
     println!("halo");
-    
+
     println!("Hello nama saya khairul aswad");
 
     say_hello_to_number(30);
@@ -37,8 +37,7 @@ fn hello_test() {
 
 #[test]
 fn test_variable() {
-
-    let name= "khairul aswad";
+    let name = "khairul aswad";
 
     println!("Hello {}", name);
 }
@@ -60,7 +59,7 @@ fn static_typing() {
 
     // name = 10;
 
-    println!("hello {}",name)
+    println!("hello {}", name)
 }
 
 #[test]
@@ -77,18 +76,18 @@ fn shadowing() {
 #[test]
 fn comment() {
     println!("Hello");
-    //single comment 
+    //single comment
 
     /*
 
     comment on besides one line
-    
+
     */
 }
 
 #[test]
 fn explicit() {
-    let umur_pengguna:u8 = 20;
+    let umur_pengguna: u8 = 20;
 
     println!("Umur Saya : {}", umur_pengguna)
 }
@@ -122,17 +121,16 @@ fn numerical_operator() {
 
     let c = a * b;
     let e = a % b;
-    let d  = c / b;
+    let d = c / b;
 
     let remainder = 2 % 4;
-    println!("Hasil dari modulus tersebut ialah: {remainder}"); 
+    println!("Hasil dari modulus tersebut ialah: {remainder}");
     println!("{}", c);
     println!("{}", e);
     println!("{}", d);
 }
 #[test]
 fn boolean_type() {
-
     let t = true;
 
     let f: bool = false;
@@ -143,7 +141,6 @@ fn boolean_type() {
 
 #[test]
 fn char_type() {
-
     let t = 's';
 
     let f: char = 'B';
@@ -203,7 +200,10 @@ fn boolean_operator() {
 
     let lulus_final: bool = lulus && lulus_nilai_akhir;
 
-    println!("lulus nilai akhir true=lulus, false=tidak : {}", lulus_final)
+    println!(
+        "lulus nilai akhir true=lulus, false=tidak : {}",
+        lulus_final
+    )
 }
 
 #[test]
@@ -235,7 +235,7 @@ fn function_represenst() {
     println!("Hello, world!");
 
     say_hello_to_number(30);
-    print_labeled_measurement(40,'H');
+    print_labeled_measurement(40, 'H');
 }
 
 fn say_hello_to_number(x: i32) {
@@ -250,7 +250,6 @@ fn print_labeled_measurement(value: i32, unit_label: char) {
 fn function_statement_and_expressions() {
     //this is statemnt
     let t = 7;
-
 
     //Calling a macro is expression
     println!("{t}");
@@ -300,12 +299,10 @@ fn control_flow() {
     } else {
         println!("Kamu grade C")
     }
-
 }
 
 #[test]
 fn ganjil_genap_cek() {
-
     let value = 40;
 
     if value % 2 == 0 {
@@ -319,7 +316,7 @@ fn ganjil_genap_cek() {
 fn using_if_on_let() {
     let condition = false;
 
-    let number = if condition {6} else {7};
+    let number = if condition { 6 } else { 7 };
 
     // incompatible, value must be one if type
     // let number = if condition {6} else {"seven"};
@@ -344,7 +341,6 @@ fn repetitio_using_loops() {
         if counter == 5 {
             break counter;
         }
-
     };
 
     println!("value of counter is {result}")
@@ -424,7 +420,7 @@ fn another_looping_expreience() {
     let mut nano_prison = String::new();
 
     io::stdin()
-        .read_line( &mut nano_prison)
+        .read_line(&mut nano_prison)
         .expect("cannot read line");
 
     //using shadowing variable this method only use when you need convert type of variabel
@@ -438,4 +434,15 @@ fn looping_using_for() {
     for number in 1..100 {
         println!("{number}");
     }
+}
+
+#[test]
+fn debugging_mode() {
+    let pablo_escobar_mode: (i32, bool, String) = (10, true, String::from("halo dek"));
+
+    let a = pablo_escobar_mode;
+
+    println!("{:?}", a);
+
+    println!("")
 }
