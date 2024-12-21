@@ -438,11 +438,132 @@ fn looping_using_for() {
 
 #[test]
 fn debugging_mode() {
-    let pablo_escobar_mode: (i32, bool, String) = (10, true, String::from("halo dek"));
+    let mut pablo_escobar_mode: (i32, bool, String) = (10, true, String::from("halo dek"));
 
-    let a = pablo_escobar_mode;
+    let (a, b, c) = pablo_escobar_mode;
+    println!("{} {} {}", a, b, c );
 
-    println!("{:?}", a);
+    pablo_escobar_mode.0 = 20;
+    pablo_escobar_mode.1 = false;
+    pablo_escobar_mode.2 = String::from("khairul");
 
-    println!("")
+    println!("{:?}", pablo_escobar_mode);
+}
+
+fn unit() {
+    println!("halo dek ini unit tuple kosong");
+}
+
+#[test]
+fn test_unit() {
+    let result = unit();
+
+    println!("{:?}", result);
+
+    let test_unit: () = ();
+    println!("{:?}", test_unit);
+}
+
+#[test]
+fn array() {
+    let mut array: [i32; 5] = [1, 2, 3, 4, 5];
+    println!("{:?}", array);
+
+    array[0] = 100;
+    array[1] = 300;
+
+    println!("{}", array[0]);
+    println!("{}", array[1]);
+
+    let length_array: usize = array.len();
+    println!("panjang data array {}", length_array); 
+}
+
+#[test]
+fn two_dimensional_array() {
+    let matrix: [[i32; 3]; 3] = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
+    ];
+
+    println!("{:?}", matrix[2][2]);
+}
+
+const THIS_IS_A_CONST: bool = true;
+
+#[test]
+fn constant() {
+    const MUST_FALSE: bool = !true;
+
+    println!("{}, {}", MUST_FALSE, THIS_IS_A_CONST); 
+}
+
+#[test]
+fn variable_scope() {
+
+    //tidak bisa mengakses ke luar scope kecuali variable tersebut di deklarasi di dalam scope dan di dalam scope tersebut di deklarasikan lagi scope
+
+    println!("{THIS_IS_A_CONST}");
+
+    let scope_pertama = 10;
+
+    {
+        println!("{}", scope_pertama);
+
+        let scope_kedua = 80;
+
+        println!("{}", scope_kedua)
+    }
+
+    println!("{}", scope_pertama)
+}
+
+#[test]
+fn stack_heap() {
+    function_a();
+    function_b();
+}
+
+fn function_a() {
+    let a = 10;
+    let b = String::from("aswad");
+
+    println!("{} {}", a, b);
+}
+
+fn function_b() {
+    let a = 10;
+
+    let b = String::from("khairul aswad");
+
+    println!("{} {}", a, b);
+}
+
+#[test]
+//string slice menggunakan &str
+fn string() {
+    let name: &str = " Khairul Aswad ";
+
+    let name_trim = name.trim();
+
+    println!("{}", name);
+
+    println!("{}", name_trim);
+
+    println!("{}", name);
+}
+
+#[test]
+fn string_type() {
+    let mut name: String = String::from("Khairul ");
+    println!("{}", name);
+
+    name.push_str("Aswad");
+    println!("{}", name);
+
+    let new_name = name.replace("Khairul", "TOLOL");
+
+    println!("{}", name);
+    println!("{}", new_name);
 }
