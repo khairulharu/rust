@@ -567,3 +567,51 @@ fn string_type() {
     println!("{}", name);
     println!("{}", new_name);
 }
+
+#[test]
+fn ownership_rules() {
+    let a = 100;
+
+    {
+        println!("{}", a);
+
+        let b = 200;
+
+        println!("{}", b);
+    }
+
+    println!("{}", a);
+}
+
+#[test]
+fn data_copy() {
+    //semua data yang di simpan di stack ketika di assign di new variable maka variable tersebut mengambil copy dari variable pertamanya, atau yang di assign nya.
+    //jadi dia tidak mengambil variabale nya melainkan mengcopy isi variablenya
+
+    let a = 10;
+
+    let mut b = a;
+    println!("{}", b);
+
+    b = 100;
+
+    println!("{} {}", a, b);
+}
+
+#[test]
+fn ownership_movement() {
+    let name1: String = String::from("ini akan pindah jika di assign di new variable");
+
+    let name2: String = name1;
+
+    println!("{}", name2);
+}
+
+#[test]
+fn clone() {
+    let name1 = String::from("Cloning data");
+
+    let name2 = name1.clone();
+
+    println!("{} {}", name1, name2);
+}
