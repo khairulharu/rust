@@ -615,3 +615,50 @@ fn clone() {
 
     println!("{} {}", name1, name2);
 }
+
+#[test]
+fn if_experession() {
+    let value = 6;
+    let result: &str = if value >= 8 {
+        "sigma"
+    }else if value >= 5 {
+        "+100aura"
+    }else {
+        "skibidi toilet"
+    };
+
+    println!("{}", result);
+}
+
+#[test]
+
+fn loop_expression() {
+    let mut counter = 0;
+
+    loop {
+        counter += 1;
+
+        if counter > 10 {
+            break;
+
+        } else if counter % 2 == 0 {
+            continue;
+        }
+
+        println!("Counter {}", counter);
+    }
+}
+
+#[test]
+fn loop_return_value() {
+    let mut counter = 0;
+    let result = loop {
+        counter += 1;
+        if counter > 10 {
+            println!("{counter}");
+            break counter * 2;
+        }
+    };
+
+    println!("Result: {}", result);
+}
