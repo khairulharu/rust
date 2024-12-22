@@ -652,12 +652,12 @@ fn loop_expression() {
 #[test]
 fn loop_return_value() {
     let mut counter = 0;
+
     let result = loop {
-        counter += 1;
-        if counter > 10 {
-            println!("{counter}");
-            break counter * 2;
+        if counter == 10 {
+            break counter;
         }
+        counter += 1;
     };
 
     println!("Result: {}", result);
